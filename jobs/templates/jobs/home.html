@@ -1,0 +1,66 @@
+<!doctype html>
+
+
+
+
+
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Vishnu Mohandas</title>
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+
+<body>
+    <main role="main">
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading">Vishnu Mohandas</h1>
+                <p class="lead text-muted">I like programming and graphic designing, <br> i work as a software developer in a company called Pace wisdom and, i do some graphic design and content writing as a hobby during my free time.</p>
+                <p>
+                    <a href="mailto:vishnuak15@gmail.com" class="btn btn-primary my-2">Email Me</a>
+                </p>
+                <img src="{% static 'My Post.jpg' %}" class="rounded-circle" height="400" />
+            </div>
+        </section>
+        <div class="album py-5 bg-light ">
+            <div class="container ">
+                <div class="row">
+                    {% for job in jobs.all %}
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <a href="{% url 'detail' job.id %}" style="color:black">
+                                <img class="card-img" src="{{ job.image.url }}" alt="Card image ">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ job.summary }}</h5>
+                                    <p class="card-text"><small class="text-muted">Created at:{{ job.created_at }} <br> </small></p>
+                                </div>
+                            </a>
+                        </div>
+                        <br>
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'js/bootstrap.js' %} "></script>
+    <script src="{% static 'jquery-3.3.1.min.js' %} "></script>
+</body>
+
+</html>
