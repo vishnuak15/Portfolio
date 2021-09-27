@@ -25,7 +25,7 @@ SECRET_KEY = '1cq*4)t(i5fjjzm73dp0i64v&3g8kw@&79k883x4kl@l5^1rs&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sheltered-hollows-10135.herokuapp.com']
 
 
 # Application definition
@@ -74,6 +74,20 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+# development
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'portfolio',
+#         'USER':'postgres',
+#         'PASSWORD':  os.environ.get('PASSWORD'),
+#         'HOST':'localhost',
+#         'PORT':'5432',
+#     }
+# }
+
+#Production
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -84,7 +98,6 @@ DATABASES = {
         'PORT':'5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
